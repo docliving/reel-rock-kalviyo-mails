@@ -1,0 +1,645 @@
+s<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" /> <!-- utf-8 works for most cases -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" /> <!-- Forcing initial-scale shouldn't be necessary -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Use the latest (edge) version of IE rendering engine -->
+  <meta name="x-apple-disable-message-reformatting" /> <!-- Disable auto-scale in iOS 10 Mail entirely -->
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet" />
+
+  <!-- CSS Reset : BEGIN -->
+  <style type="text/css">
+    /* What it does: Remove spaces around the email design added by some email clients. */
+
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      background-color: #ffffff;
+
+    }
+
+    /* What it does: Stops email clients resizing small text. */
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+
+
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+
+    /* What it does: Fixes webkit padding issue. */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      margin: 0 auto !important;
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+
+    /* What it does: A work-around for email clients meddling in triggered links. */
+    *[x-apple-data-detectors],
+    /* iOS */
+    .unstyle-auto-detected-links *,
+    .aBn {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+
+
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+    /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+    /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+      u~div .email-container {
+        min-width: 320px !important;
+      }
+    }
+
+    /* iPhone 6, 6S, 7, 8, and X */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      u~div .email-container {
+        min-width: 375px !important;
+      }
+    }
+
+    /* iPhone 6+, 7+, and 8+ */
+    @media only screen and (min-device-width: 414px) {
+      u~div .email-container {
+        min-width: 414px !important;
+      }
+    }
+
+    .bg_white {
+      background: #ffffff;
+    }
+
+    /*BUTTON*/
+    .btn {
+      padding: 10px 15px;
+      display: inline-block;
+    }
+
+    .btn.btn-primary {
+      border-radius: 0;
+      background: #e34528;
+      color: #ffffff;
+      font-size: 14px;
+      padding: 1em 4em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Work Sans', sans-serif;
+      color: #000000;
+      margin-top: 0;
+      font-weight: 400;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    a {
+      color: #17bebb;
+    }
+
+    /*HERO*/
+    .hero {
+      position: relative;
+      z-index: 0;
+    }
+
+    .hero .text {
+      color: rgba(0, 0, 0, .3);
+    }
+
+    .hero .order-number {
+      padding: 1em;
+      color: #ffffff;
+      text-align: center;
+      background-color: #2271aa;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4em;
+    }
+
+    .hero .text h2 {
+      color: #000;
+      font-size: 34px;
+      margin-bottom: 0;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .hero .text h3 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .hero .text h2 span {
+      font-weight: 600;
+      color: #000;
+    }
+
+    .info-box {
+      border: 1px solid;
+      padding: 1.5em;
+      text-align: left;
+      color: #000;
+    }
+
+    .info-box p {
+      margin: 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .info-box p img {
+      width: 15px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .info-box h4 {
+      margin: 0;
+      color: #2271aa;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .info-box strong {
+      margin-top: 1em;
+      font-size: 14px;
+      display: block;
+    }
+
+    .info-box span {
+      color: #2271aa;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .faqs-label .faq {
+      color: #fff;
+      width: 150px;
+      padding: 0.5em;
+      background-color: #f69e28;
+      margin-top: -20px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .icons-row {
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .icons-row img {
+      display: inline-block;
+      width: 40px;
+      margin: auto;
+    }
+
+    .footer-logos {
+      text-align: center;
+      background-image: url('./images/landscape.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      style="background: url('https://via.placeholder.com/640x400') center / cover no-repeat #000000;"
+    }
+
+    .footer-logos img {
+      width: auto;
+      max-width: 80px;
+      display: inline-block;
+    }
+
+    .footer-logos span {
+      display: block;
+      font-size: 10px;
+      color: #fff;
+    }
+
+    .menu a {
+      font-size: 12px;
+      color: black;
+      padding: 1em;
+      font-weight: 500;
+    }
+
+    /*PRODUCT*/
+    .product-entry {
+      display: block;
+      position: relative;
+      float: left;
+      padding-top: 20px;
+    }
+
+    .product-entry .text {
+
+      padding-left: 20px;
+    }
+
+    .product-entry .text h3 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    .product-entry .text p {
+      margin-top: 0;
+    }
+
+    .product-entry img,
+    .product-entry .text {
+      float: left;
+    }
+
+    .product-entry img {
+      width: 30px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    /*FOOTER*/
+  </style>
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #fff;">
+  <center style="width: 100%;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 800px; margin: 0 auto;" class="email-container">
+      <!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <tr>
+          <td valign="top" class="bg_white" style="background: #ffffff; padding: 1em 2.5em 0 2.5em;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td class="logo" width="20%" style="text-align: left;">
+                  <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/REEL_ROCK_Logo_150x.png" alt="logo" width="150" height="42" />
+                </td>
+                <td class="menu" width="100%" style="text-align: right;">
+                  <a style="font-size:1rem;font-weight:bold;" href="https://reelrocktour.com/pages/about">ABOUT</a>
+                  <a style="font-size:1rem;font-weight:bold;" href="https://reelrocktour.com/collections/merch">STORE</a>
+                  <a style="font-size:1rem;font-weight:bold;" href="https://reelrocktour.com/pages/reel-rock-16">REEL ROCK 16</a>
+                  <a style="font-size:1rem;font-weight:bold;" href="https://watch.reelrocktour.com">REEL ROCK UNLIMITED</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr><!-- end tr -->
+        <tr>
+          <td valign="middle" class="hero bg_white" style="background: #ffffff; padding: 2em 0 2em 0;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td style="padding: 0 2.5em; text-align: center;">
+                  <div class="text">
+                    <h2 style="font-size: 2.2rem;">Thank you for your purchase!</h2>
+                  </div>
+                  <div class="order-number" style="padding:1rem">
+                    ORDER NUMBER: AX234234234
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr><!-- end tr -->
+
+        <tr>
+          <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="90%" style="background: #ffffff;">
+            <tr style="border-bottom: 2px solid rgba(0,0,0,0.1);">
+              <th width="80%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Item</th>
+              <th width="20%" style="text-align:right; padding: 0 2.5em; color: #000; padding-bottom: 20px">Price</th>
+            </tr>
+            <tr style="border-bottom: 2px solid rgba(0,0,0,0.1);">
+              <td valign="middle" width="80%" style="text-align:left; padding: 1em 2.5em;">
+                <div class="product-entry" style="display: flex;">
+                  <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_1.png" style="width:12%;margin-top: -10px;object-fit: contain;">
+                  <!--img src="./images/icon.png">
+                                    <img src="./images/icon.png">
+                                    <img src="./images/icon.png"-->
+                  <div class="text">
+                    <h3>RR16 Weekend Ticket</h3>
+                    <h3 style="margin-left: 2rem">Variant Name (Individual etc.)</h3>
+                  </div>
+                </div>
+              </td>
+
+              <td valign="middle" width="20%" style="text-align: right; padding: 0 2.5em;">
+                <span class="price" style="color: #000; font-size: 16px; font-weight: 600;">$25</span>
+              </td>
+            </tr>
+          </table>
+        </tr>
+      </table>
+
+      <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background: #ffffff;">
+        <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+          <td valign="middle" width="100%" style="text-align: right; padding: 1em 2.5em 4em 2.5em;">
+            <span class="price" style="color: #000; font-size: 16px; font-weight: 600;margin-right:2rem">TOTAL: $25.00
+              USD</span>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="padding-top: 4em">
+            <h3 style="font-size: 20px; font-weight: 600; text-align: center; line-height: 28px">
+              You’ve purchased the RR16 Individual Weekend Ticket, good for one person.
+            </h3>
+
+            <h3 style="font-size: 15px; font-weight: 600; text-align: center; line-height: 20px;margin-left:3rem;margin-right:3rem;">
+              If your plans change and more people will be joining you, 
+			  <a href="https://reelrocktour.com/pages/contact" style="border-bottom: 1px solid #000;color:inherit">contact us</a> and we’ll get you sorted!
+            </h3>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: rgb(243,243,243);">
+        <tr>
+          <td valign="middle" width="60%" style="text-align: left; padding: 0 1em 4em 1.5em;">
+            <h3 style="font-size: 35px; font-weight: 800; position: relative;">
+              <!-- <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_1.png" width="40px" style="position: absolute; left: 0"> -->
+              Here’s how to watch:
+            </h3>
+            <p style="font-size: 14px; color: black;">
+              Fill your chalk bag, RR16 goes live at 9pm EST
+              on Thursday, March 17.
+              <br>
+              <br>
+              <a href="https://reelrocktour.com/pages/reel-rock-16" style="color:#000;border-bottom:1px solid #000;">Watch the premiere here</a>, or visit the Reel Rock 16
+              tab from our homepage. Sign in to the account used
+              to purchase your ticket to unlock the content.
+            </p>
+          </td>
+
+          <td valign="middle" width="40%" style="text-align: right; padding: 3em 1.5em 0 0;">
+            <div class="info-box" style="border:3px solid #2271aa;">
+              <h4 style="font-size: 1.5rem;">Viewing Window</h4>
+              <strong style="font-size: 1.1rem;">SCREENING STARTS:</strong>
+              <p style="font-size: 1rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
+                Thursday March 17
+              </p>
+              <p style="font-size: 1rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
+                9:00pm (EST)
+              </p>
+
+              <strong style="font-size: 1.1rem;">SCREENING ENDS:</strong>
+              <p style="font-size: 1rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
+                Sunday March 20
+              </p>
+              <p style="font-size: 1rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
+                11:59pm (EST)
+              </p>
+
+              <span style="font-size: 0.9rem;display:flex;align-items:center">
+                <div style="
+                  display:flex;
+                  align-items: center;
+                  justify-content:center;
+                  background-color: #2271aa;border-radius:100%; height: 0.8rem;width:0.9rem;color:#fff;
+                  margin-right: 2px
+                ">!
+                </div>
+                <a href="https://reelrocktour.com/pages/reel-rock-16-faq" ><span style="color: #2271AA">ONLINE SCREENING FAQS</span></a>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: rgb(243,243,243);">
+        <tr>
+          <td valign="middle" width="100%" style="text-align: left; padding: 0 2.5em 2.5em 2.5em;">
+            <!-- <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_2.png" width="50px" style="position: absolute; left: 0">
+              Reel Rock Unlimited
+            </h3>
+            <p style="font-size: 14px; color: black;">Ready to stream 150+ epic climbing films? Check your inbox momentarily for a
+              personalized link to access <b style="border-bottom: 2px solid #000;">Reel Rock Unlimited</b> on your desktop or mobile and set
+              your password. Then download the app (search for “Reel Rock” in the App Store)
+              for iOS, Android, Roku or Firestick and start streaming instantly.</p>
+
+            <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;margin-top:2rem">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_3.png" width="40px" style="position: absolute; left: 0">
+              Reel Rock Vintage Tee
+            </h3>
+            <p style="font-size: 14px; color: black;">Be the first to get the brand-new Reel Rock design. Use your unique discount code
+              below at checkout to get the <b style="border-bottom: 1.5px solid #000;font-weight:normal">Reel Rock 16 Vintage Tee</b> for free - you’ll just pay for
+              shipping. The deadline for ordering is March 31st - tees ship mid-April. You’ll receive
+              tracking info and order updates as available.</p> -->
+
+            <!-- <h3 style="font-size: 26px; font-weight: 800; text-align: center;border:3px solid #f69e28;">FREE T-SHIRT CODE: JFKDJ74FDIO89</h3> -->
+            <br>
+                      </td>
+        </tr>
+      </table>
+
+      <div class="faqs-label" style="background-color: rgb(243,243,243);padding-bottom:0.5rem;margin-bottom:1.5rem">
+        <div class="faq" style="margin-bottom: 2em;background-color: #2271aa;">
+          <a href="https://reelrocktour.com/pages/reel-rock-16-faq" ><span style="color: #ffffff">RR16 FAQ</span></a>
+        </div>
+      </div>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td>
+            <h3 style="font-size: 28px; font-weight: bold; text-align: center; line-height: 28px;margin-bottom:0;">
+              Can’t wait for RR16?
+            </h3>
+
+            <h3 style="font-size: 18px; font-weight: 500; text-align: center; line-height: 24px;margin-left:3rem;margin-right:3rem;margin-top:0;">
+              If you need immediate stoke, there’s still time to upgrade to the<br>
+              <b>Reel Rock Annual Package</b> for only $70 more
+            </h3>
+
+            <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              margin-bottom: 1rem;
+            ">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual.png">
+
+              <a href="https://reelrocktour.com/products/reel-rock-annual-package" style="
+                display: flex;
+                width: 10rem;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2em;
+                background-color: #f69e28;
+                padding: 1rem;
+                margin-top: 1rem;
+                color: #fff;
+                font-weight: 500;
+              ">
+                UPGRADE NOW
+</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="padding-bottom: 2rem;">
+            <h3 style="font-size: 28px; font-weight: 500; text-align: center; line-height: 28px;margin-bottom:0;">
+              The <b>Reel Rock Annual Package</b> includes:
+            </h3>
+          </td>
+        </tr>
+        <tr>
+          <td valign="middle" width="100%" style="text-align: left; padding: 0 2.5em 2.5em 2.5em;">
+            <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_1.png" height="35" width="36">
+              Reel Rock Unlimited
+            </h3>
+            <p style="font-size: 14px; color: black;">
+              Get immediate access and one year of streaming - <b>Reel Rock Unlimited</b> is the only
+              place to watch 25 years of legendary films from Reel Rock, Big Up Productions and
+              Sender Films. 150+ films, endless stoke. Now available as an app for iOS, Android,
+              Roku and Firestick.
+            </p>
+
+            <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative; margin-top:2rem">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_3.png"  height="35" width="36">
+              Reel Rock Vintage Tee
+            </h3>
+            <p style="font-size: 14px; color: black;">
+              Get our brand-new limited edition tee - a timeless design inspired by climbing’s
+              historic roots.
+            </p>
+
+            <br>
+
+            <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;">
+              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_5.png"  height="35" width="31">
+              Giveaways + Partner Discounts
+            </h3>
+            <p style="font-size: 14px; color: black;">
+              Get entered into an entire year of epic giveaways from our partners at The North
+              Face, Yeti, Black Diamond, TruBlue and more. Giveaways are starting now - don’t
+              miss out.
+            </p>
+
+            <!-- <h3 style="font-size: 26px; font-weight: 800; text-align: center;border:3px solid #f69e28;">FREE T-SHIRT CODE: JFKDJ74FDIO89</h3> -->
+            <br>
+                      </td>
+        </tr>
+      </table>
+
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td>
+            <h3 style="font-size: 22px; font-weight: 500; text-align: center; line-height: 30px;margin-bottom:0;">
+              Upgrade to the <b>Reel Rock Annual Package</b> now<br>
+              $70 more, a whole year of Reel Rock
+            </h3>
+
+            <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              margin-bottom: 1rem;
+            ">
+              <a href="https://reelrocktour.com/products/reel-rock-annual-package" style="
+                display: flex;
+                width: 10rem;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2em;
+                background-color: #f69e28;
+                padding: 1rem;
+                margin-top: 1rem;
+                color: #fff;
+                font-weight: 500;
+              ">
+                UPGRADE NOW
+</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div class="faqs-label" style="position: relative;background-color: rgb(243,243,243);">
+        <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/RR16_SponsorBanner_Margo_Desktop_2.jpg" style="width:100%;">
+      </div>
+
+
+      <!--table class="footer-logos" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0"
+				width="100%" style="margin: auto;">
+				<tr>
+					<td class="l-logos" valign="middle" width="20%" style="padding: 1em;">
+						<span>PRESENTED BY:</span>
+						<img src="./images/logo-placeholder-1.png">
+					</td>
+					<td width="30%" style="padding: 1em;"></td>
+					<td class="r-logos" valign="middle" width="50%" style="padding: 1em;">
+						<span>ALSO SUPPORTED BY:</span>
+						<img src="./images/logo-placeholder-1.png">
+						<img src="./images/logo-placeholder-1.png">
+						<img src="./images/logo-placeholder-1.png">
+
+					</td>
+				</tr>
+			</table-->
+
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;padding:1rem">
+        <tr>
+          <td style="text-align: center;background-color: #171616;color: #fff;font-size: 11px;padding:1rem">
+            <p>© 2022 REEL ROCK</p>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </center>
+</body>
+
+</html>
