@@ -133,6 +133,45 @@
 
     }
 
+    .global-premiere {
+      display: inline-block;
+    }
+
+    .global-premiere.left {
+      width: 60%;
+    }
+
+    .global-premiere.right {
+      width: 39%;
+    }
+
+    @media screen and (max-width:800px) {
+
+      td.logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      td.menu {
+        display: none;
+      }
+
+
+    }
+
+    @media screen and (max-width:600px) {
+      .global-premiere {
+        display: block;
+
+      }
+
+      .global-premiere.left,
+      .global-premiere.global-premiere.right {
+        width: 100%;
+      }
+
+    }
+
 
 
     .bg_white {

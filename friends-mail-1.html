@@ -93,6 +93,45 @@
       }
     }
 
+    .global-premiere {
+      display: inline-block;
+    }
+
+    .global-premiere.left {
+      width: 60%;
+    }
+
+    .global-premiere.right {
+      width: 39%;
+    }
+
+    @media screen and (max-width:800px) {
+
+      td.logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      td.menu {
+        display: none;
+      }
+
+
+    }
+
+    @media screen and (max-width:600px) {
+      .global-premiere {
+        display: block;
+
+      }
+
+      .global-premiere.left,
+      .global-premiere.global-premiere.right {
+        width: 100%;
+      }
+
+    }
+
     .bg_white {
       background: #ffffff;
     }
@@ -322,8 +361,8 @@
                   <div class="text">
                     <h2 style="font-size: 2.2rem;">Thank you for your purchase!</h2>
                   </div>
-                  <div class="order-number" style="padding:1rem">
-                    ORDER NUMBER: AX234234234
+                  <div class="order-number" style="background-color: #F7C631; padding:1rem">
+                    ORDER NUMBER: {{ event.extra.name }}
                   </div>
                 </td>
               </tr>
@@ -387,60 +426,47 @@
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
         style="background-color: rgb(243,243,243);">
         <tr>
-          <td valign="middle" width="60%" style="text-align: left; padding: 0 1em 4em 1.5em;">
-            <h3 style="font-size: 35px; font-weight: 800; position: relative;">
-              <!-- <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_1.png" width="40px" style="position: absolute; left: 0"> -->
-              Here’s how to watch:
-            </h3>
-            <p style="font-size: 14px; color: black;">
-              Fill your chalk bag, RR16 goes live at 9pm EST
-              on Thursday, March 17.
-              <br>
-              <br>
-              <a href="https://reelrocktour.com/pages/reel-rock-16"
-                style="color:#000;border-bottom:1px solid #000;">Watch the premiere here</a>, or visit the Reel Rock 16
-              tab from our homepage. Sign in to the account used
-              to purchase your ticket to unlock the content.
-            </p>
-          </td>
+          <td valign="top" width="100%" style="padding: 0 1em 2.5em 2.5em;">
+              <div class="global-premiere left" style="vertical-align:top;">
+                <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;">
+                  <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_1.png" height="35"
+                    width="36">
+                  RR16 Global Online Premiere
+                </h3>
+                <p style="font-size: 14px; color: black;">Reel Rock 16 will be available on
+                  <a href="https://watch.reelrocktour.com/browse"><span
+                      style="color: #000000; border-bottom: 2px solid #000; font-weight:bold">Reel Rock
+                      Unlimited</span></a>
+                  starting on March 17 at 9pm EST. We’ll send you
+                  reminders as the premiere date gets closer.
+                </p>
+              </div>
 
-          <td valign="middle" width="40%" style="text-align: right; padding: 3em 1.5em 0 0;">
-            <div class="info-box" style="border:3px solid #2271aa;">
-              <h4 style="font-size: 1.5rem;">Viewing Window</h4>
-              <strong style="font-size: 1.1rem;">SCREENING STARTS:</strong>
-              <p style="font-size: 1rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
-                Thursday March 17
-              </p>
-              <p style="font-size: 1rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
-                9:00pm (EST)
-              </p>
-
-              <strong style="font-size: 1.1rem;">SCREENING ENDS:</strong>
-              <p style="font-size: 1rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
-                Sunday March 20
-              </p>
-              <p style="font-size: 1rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
-                11:59pm (EST)
-              </p>
-
-              <span style="font-size: 0.9rem;display:flex;align-items:center">
-                <div style="
-                  display:flex;
-                  align-items: center;
-                  justify-content:center;
-                  background-color: #2271aa;border-radius:100%; height: 0.8rem;width:0.9rem;color:#fff;
-                  margin-right: 2px
-                ">!
+              <div class="global-premiere right">
+                <div class="info-box" style="border: 3px solid black;">
+                  <h4>Viewing Window</h4>
+                  <strong>SCREENING STARTS:</strong>
+                  <p>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
+                    Thursday March 17
+                  </p>
+                  <p>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
+                    9:00pm (EST)
+                  </p>
+                  <strong>SCREENING ENDS:</strong>
+                  <p>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_calendario.png">
+                    Sunday March 20
+                  </p>
+                  <p>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/annual_reloj.png">
+                    11:59pm (EST)
+                  </p>
+                  <span>ONLINE SCREENING FAQS</span>
                 </div>
-                <a href="https://reelrocktour.com/pages/reel-rock-16-faq"><span style="color: #2271AA">ONLINE SCREENING
-                    FAQS</span></a>
-              </span>
-            </div>
-          </td>
+              </div>
+            </td>
         </tr>
       </table>
 
@@ -448,25 +474,7 @@
         style="background-color: rgb(243,243,243);">
         <tr>
           <td valign="middle" width="100%" style="text-align: left; padding: 0 2.5em 2.5em 2.5em;">
-            <!-- <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;">
-              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_2.png" width="50px" style="position: absolute; left: 0">
-              Reel Rock Unlimited
-            </h3>
-            <p style="font-size: 14px; color: black;">Ready to stream 150+ epic climbing films? Check your inbox momentarily for a
-              personalized link to access <b style="border-bottom: 2px solid #000;">Reel Rock Unlimited</b> on your desktop or mobile and set
-              your password. Then download the app (search for “Reel Rock” in the App Store)
-              for iOS, Android, Roku or Firestick and start streaming instantly.</p>
-
-            <h3 style="font-size: 22px; font-weight: 800; padding-left: 0px; position: relative;margin-top:2rem">
-              <img src="https://cdn.shopify.com/s/files/1/0248/7245/2174/files/mails-receipt_3.png" width="40px" style="position: absolute; left: 0">
-              Reel Rock Vintage Tee
-            </h3>
-            <p style="font-size: 14px; color: black;">Be the first to get the brand-new Reel Rock design. Use your unique discount code
-              below at checkout to get the <b style="border-bottom: 1.5px solid #000;font-weight:normal">Reel Rock 16 Vintage Tee</b> for free - you’ll just pay for
-              shipping. The deadline for ordering is March 31st - tees ship mid-April. You’ll receive
-              tracking info and order updates as available.</p> -->
-
-            
+                    
             <br>
 
           </td>
