@@ -1,4 +1,6 @@
-{% capture email_title %}Thank you for your purchase! {% endcapture %}
+{% capture email_title %}Thank you for your purchase!
+<br>Keep your eye on your inbox for a follow-up email with details about how to access your content.
+{% endcapture %}
 {% capture email_body %}
   {% if requires_shipping %}
   {% case delivery_method %}
